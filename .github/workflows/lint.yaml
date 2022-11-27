@@ -59,8 +59,9 @@ jobs:
     steps:
       - name: markdownlint
         uses: DavidAnson/markdownlint-cli2-action@v7
-        continue-on-error: true
+        # continue-on-error: true
         with:
           globs: |
-            ./*.md
-            **/*.md
+            README.md
+            CHANGELOG.md
+            docs/*.md
