@@ -51,7 +51,7 @@ jobs:
 
   # This job runs markdownlint and reports issues from linters.
   # https://github.com/DavidAnson/markdownlint-cli2-action
-  golangci:
+  markdownlint:
     name: markdownlint
     runs-on: ubuntu-latest
     permissions:
