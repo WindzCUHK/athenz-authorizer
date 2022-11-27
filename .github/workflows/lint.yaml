@@ -61,4 +61,6 @@ jobs:
         uses: DavidAnson/markdownlint-cli2-action@v7
         continue-on-error: true
         with:
-          globs: '**/*.md'
+          globs: |
+            ./*.md
+            **/*.md
