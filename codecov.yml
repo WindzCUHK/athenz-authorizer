@@ -1,0 +1,12 @@
+coverage:
+  status:
+    patch: true
+    project:
+      default:
+        target: auto
+        threshold: 0%
+        base: auto
+        flags:
+          - unit
+github_checks:
+  annotations: true
