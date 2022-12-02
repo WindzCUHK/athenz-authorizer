@@ -88,8 +88,8 @@ jobs:
         with:
           sarif_file: snyk.sarif
 
-  analyze:
-    name: analyze
+  CodeQL:
+    name: CodeQL
     runs-on: ubuntu-latest
     permissions:
       security-events: write
@@ -100,17 +100,12 @@ jobs:
         language: ['go']
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
           languages: ${{ matrix.language }}
-      - name: Setup Golang
-        uses: actions/setup-go@v3
-        with:
-          go-version: ${{ env.GOLANG_VERSION }}
-      - name: Golang build
-        run: |
-          go build
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
